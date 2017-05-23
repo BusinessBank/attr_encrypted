@@ -330,7 +330,7 @@ module AttrEncrypted
         if(iv == nil)
           begin
             algorithm = algorithm || "aes-256-cbc"
-            algo = OpenSSL::Cipher::Cipher.new(algorithm)
+            algo = OpenSSL::Cipher.new(algorithm)
             iv = [algo.random_iv].pack("m")
             send("#{encrypted_attribute_name}_iv=", iv)
           rescue RuntimeError
